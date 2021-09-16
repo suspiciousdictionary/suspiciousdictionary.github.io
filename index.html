@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital@1&family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="data.js" defer></script>
     <script src="script.js" defer></script>
+    <link rel="stylesheet" href="fonts.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="info-box.css">
 </head>
 <body>
     <div id="header-container">
@@ -20,8 +19,16 @@
     <div id="letter-container">
 
     </div>
-    <div id="main-container">
-
+    <div id="offset-div">
+        <div id="main-container">
+            <div id="word-information" class="hidden">
+                <img id="info-img" class="info-image" src="https://www.amogus.org/amogus.png" alt="">
+                <h1 id="info-title" class="info-title">Amogus</h1>
+                <p id="info-desc" class="info-description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <a class="info-button hidden" href="https://www.amogus.org/amogus.png">Website</a>
+            </div>
+        </div>
     </div>
+    
 </body>
 </html>

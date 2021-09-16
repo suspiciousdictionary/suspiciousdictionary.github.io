@@ -1,0 +1,42 @@
+.info-image{
+    width: 250px;
+    height: 250px;
+    margin-top: 16px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.info-title{
+    font-family: 'Noto Sans', monospace;
+    color: var(--background-color);
+    font-size: 48px;
+    margin-top: 6px;
+}
+
+.info-description{
+    margin-top: 6px;
+    color: var(--background-color);
+    font-family: "Roboto Mono Light", sans-serif;
+    width: 90%;
+}
+
+.info-button{
+    text-decoration: none;
+    color: var(--accent-color);
+    background-color: var(--main-color-highlight);
+    border: 3px var(--accent-color) solid;
+    border-radius: 20px;
+    width: 250px;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 22px;
+
+    font-size: 24px;
+    font-family: 'Noto Sans', monospace;
+}
+
+.info-button:hover{
+    background-color: var(--main-color);
+}
