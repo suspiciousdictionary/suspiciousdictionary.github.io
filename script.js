@@ -2,14 +2,16 @@ OnLoad();
 
 var letter_section_div;
 var sidebar_div;
-var data;
+var big_data;
 var info_div;
+var lang;
+var data;
 
 function OnLoad(){
     letter_section_div = document.getElementById("main-container");
     sidebar_div = document.getElementById("letter-container");
     info_div = document.getElementById("word-information");
-    data = JSON.parse(dataJson);
+    big_data = JSON.parse(dataJson);
 
 
     var letters = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split('');
@@ -17,8 +19,24 @@ function OnLoad(){
         CreateLetterSection(element)
         AddLetterToSidebar(element);
     });
-    
-    Object.keys(data.English).forEach(element => {
+
+    var query_string = window.location.search;
+    var args = new URLSearchParams(query_string);
+    var lang_code = args.get("lang");
+    switch(lang_code){
+      case "sr":
+        lang = "Serbian";
+        break;
+      case "de":
+        lang = "German";
+        break;
+      default:
+        lang = "English"
+    }
+
+    data = big_data[lang];
+
+    Object.keys(data).forEach(element => {
         AddWordToSection(element);
     });
 }
@@ -48,9 +66,9 @@ function AddWordToSection(word){
     text_div.innerText = word;
     text_div.classList += "letter-section-word";
 
-    var hasImage = data.English[word].HasImage;
-    var desc = data.English[word].Description;
-    var buttons = data.English[word].Buttons;
+    var hasImage = data[word].HasImage;
+    var desc = data[word].Description;
+    var buttons = data[word].Buttons;
 
     if(hasImage==true || desc!=null || buttons!=null){
         word_div.classList.add("word-has-context");
@@ -71,9 +89,9 @@ function AddLetterToSidebar(letter){
 
 function PopulateInfo(event){
     var word = event.target.innerText;
-    var hasImage = data.English[word].HasImage;
-    var desc = data.English[word].Description;
-    var buttons = data.English[word].Buttons;
+    var hasImage = data[word].HasImage;
+    var desc = data[word].Description;
+    var buttons = data[word].Buttons;
 
     if(hasImage==false && desc==null && buttons==null){
         ToggleVisibility(info_div, false)
@@ -102,7 +120,7 @@ function PopulateInfo(event){
         }
 
     }
-    
+
 }
 
 function ToggleVisibility(div, isVisible){
@@ -111,5 +129,5 @@ function ToggleVisibility(div, isVisible){
     }else{
         if(div.classList.contains("hidden")==false) { div.classList.add("hidden"); }
     }
-    
+
 }

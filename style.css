@@ -22,17 +22,6 @@ body{
     display: none !important;
 }
 
-#header-container{
-    width: 100vw;
-    height: var(--header-size);
-
-    position: fixed;
-    left: 0;
-    top: 0;
-
-    background-color: var(--accent-color);
-}
-
 #letter-container{
     width: var(--sidebar-size);
     height: calc(100vh - var(--header-size));
